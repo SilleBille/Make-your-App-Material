@@ -9,6 +9,6 @@
 
     <string name="up">Up</string>
 
-    <string name="transition_thumbnail">thumbnail_transition</string>
+    <string name="transition_thumbnail">shared_pic</string>
 
 </resources>

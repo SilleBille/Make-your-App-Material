@@ -11,6 +11,8 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v13.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
@@ -151,9 +153,11 @@ public class ArticleListActivity extends AppCompatActivity implements
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        vh.thumbnailView.setTransitionName(getResources().getString(R.string.transition_thumbnail));
-                        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(
-                                ArticleListActivity.this, vh.thumbnailView, vh.thumbnailView.getTransitionName()).toBundle());
+
+                        Bundle options = ActivityOptions.makeSceneTransitionAnimation(
+                               ArticleListActivity.this, vh.thumbnailView, vh.thumbnailView.getTransitionName()).toBundle();
+
+                        startActivity(intent, options);
                     } else {
                         startActivity(intent);
                     }
