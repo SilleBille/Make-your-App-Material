@@ -47,8 +47,8 @@ public class ArticleDetailActivity extends ActionBarActivity
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                             View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
 
-            getWindow().setSharedElementEnterTransition(TransitionInflater.from(this)
-                    .inflateTransition(R.transition.curve));
+            /*getWindow().setSharedElementEnterTransition(TransitionInflater.from(this)
+                    .inflateTransition(R.transition.curve));*/
 
         }
         setContentView(R.layout.activity_article_detail);
